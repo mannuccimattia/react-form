@@ -12,12 +12,22 @@ const todo = [
 ];
 
 const App = () => {
+  const [newItem, setNewItem] = useState("");
+  const [todoList, setTodoList] = useState(todo);
+
+  const addTodo = (e) => {
+    e.preventDefault();
+    const item = newItem.trim();
+    setTodoList([...todoList, item]);
+    setNewItem("");
+  }
+
   return (
     <>
       <div className="container m-4">
         <h1>To Do List</h1>
         <ul className="list-group my-4">
-          {todo.map((task, index) => (
+          {todoList.map((task, index) => (
             <li
               key={index}
               className='list-group-item'
@@ -27,12 +37,14 @@ const App = () => {
           ))}
         </ul>
 
-        <form>
+        <form onSubmit={addTodo}>
           <div className="input-group my-3">
             <input
               type="text"
               className='form-control'
               placeholder='Aggiungi qualcosa..'
+              value={newItem}
+              onChange={(e) => { setNewItem(e.target.value) }}
             />
             <button className='btn btn-primary'>
               Aggiungi
