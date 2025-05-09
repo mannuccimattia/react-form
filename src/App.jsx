@@ -26,6 +26,19 @@ const App = () => {
             </li>
           ))}
         </ul>
+
+        <form>
+          <div className="input-group my-3">
+            <input
+              type="text"
+              className='form-control'
+              placeholder='Aggiungi qualcosa..'
+            />
+            <button className='btn btn-primary'>
+              Aggiungi
+            </button>
+          </div>
+        </form>
       </div>
     </>
   )
