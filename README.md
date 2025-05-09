@@ -13,3 +13,5 @@ Aggiungiamo in pagina un semplice form con un campo input in cui inserire il tit
 #### BONUS
 
 Aggiungere la possibilità di cancellare ciascun articolo utilizzando un'icona.
+
+DONE
