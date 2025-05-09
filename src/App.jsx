@@ -22,6 +22,14 @@ const App = () => {
     setNewItem("");
   }
 
+  const removeItem = (index) => {
+    const updatedTodoList = todoList.filter((task, i) => {
+      return i !== index
+    })
+
+    setTodoList(updatedTodoList);
+  }
+
   return (
     <>
       <div className="container m-4">
@@ -34,7 +42,9 @@ const App = () => {
             >
               {task}
               <button
-                className='btn btn-danger ms-auto'>
+                className='btn btn-danger ms-auto'
+                onClick={() => { removeItem(index) }}
+              >
                 Cancella
               </button>
             </li>
